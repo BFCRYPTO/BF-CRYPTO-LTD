@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BF-CRYPTO LTD</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-page {
+            padding: 60px 8%;
+            background: #f5f7fa;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-title h1 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-card,
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-card h2,
+        .contact-form h2 {
+            color: #0b1f3a;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #0b1f3a;
+            text-decoration: none;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 13px;
+            background: #0b1f3a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background: #163d70;
+        }
+
+        #form-message {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .map-section {
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-page {
+                padding: 40px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="logo-mark">BF</span>
+        <span class="logo-text">BF-CRYPTO LTD</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="contact-page">
+
+    <div class="contact-title">
+        <h1>GET IN TOUCH</h1>
+        <p>Contact BF-CRYPTO LTD for professional services and support.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-card">
+
+            <h2>Contact Information</h2>
+
+            <div class="contact-item">
+                <strong>📍 Location</strong>
+                <span>Kirehe, Rwanda</span>
+            </div>
+
+            <div class="contact-item">
+                <strong>📞 Phone</strong>
+                <a href="tel:+250782847555">
+                    +250 782 847 555
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <strong>💬 WhatsApp</strong>
+                <a href="https://wa.me/250782847555" target="_blank">
+                    Chat with us on WhatsApp
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <strong>🕐 Working Hours</strong>
+                <span>Monday - Saturday: 8:00 AM - 6:00 PM</span>
+            </div>
+
+            <a
+                class="whatsapp-button"
+                href="https://wa.me/250782847555"
+                target="_blank">
+                💬 WhatsApp Us
+            </a>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+                <label for="service">Service Required</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Select Service --</option>
+                    <option value="Printer & Photocopier Services">
+                        Printer & Photocopier Services
+                    </option>
+                    <option value="Online Services / Irembo">
+                        Online Services / Irembo
+                    </option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="send-button">
+                    Send Message
+                </button>
+
+                <div id="form-message"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- GOOGLE MAP -->
+    <div class="map-section">
+
+        <h2>Find Us in Kirehe</h2>
+
+        <iframe
+            src="https://www.google.com/maps?q=Kirehe,Rwanda&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 BF-CRYPTO LTD. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("form-message");
+
+contactForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    formMessage.textContent = "Sending...";
+    formMessage.style.color = "#0b1f3a";
+
+    const data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        service: document.getElementById("service").value,
+        message: document.getElementById("message").value
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:3000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+
+            formMessage.textContent = result.message;
+            formMessage.style.color = "green";
+
+            contactForm.reset();
+
+        } else {
+
+            formMessage.textContent =
+                "There was a problem sending your message.";
+
+            formMessage.style.color = "red";
+        }
+
+    } catch (error) {
+
+        console.error("Error:", error);
+
+        formMessage.textContent =
+            "Unable to connect to the server.";
+
+        formMessage.style.color = "red";
+    }
+
+});
+</script>
+
+</body>
+</html>
