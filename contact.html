@@ -269,40 +269,32 @@
 
 
 <script>
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("form-message");
+<form action="https://formspree.io/f/myeklbby" method="POST">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
 
-contactForm.addEventListener("submit", async function(event) {
-    event.preventDefault();
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
 
-    formMessage.textContent = "Sending...";
-    formMessage.style.color = "#0b1f3a";
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone">
 
-    try {
-        const response = await fetch(contactForm.action, {
-            method: "POST",
-            body: new FormData(contactForm),
-            headers: {
-                "Accept": "application/json"
-            }
-        });
+    <label for="service">Service Needed</label>
+    <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option value="Printer Repair">Printer Repair</option>
+        <option value="Photocopier Repair">Photocopier Repair</option>
+        <option value="Electronics Repair">Electronics Repair</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Irembo Assistance">Irembo Assistance</option>
+        <option value="Other">Other</option>
+    </select>
 
-        if (response.ok) {
-            formMessage.textContent =
-                "Thank you! Your message has been received.";
-            formMessage.style.color = "green";
-            contactForm.reset();
-        } else {
-            formMessage.textContent =
-                "Message could not be sent. Please try again.";
-            formMessage.style.color = "red";
-        }
-    } catch (error) {
-        formMessage.textContent =
-            "Connection problem. Please try again later.";
-        formMessage.style.color = "red";
-    }
-});
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button class="send-button" type="submit">Send Message</button>
+</form>
 </script>
 
 </body>
