@@ -269,61 +269,39 @@
 
 
 <script>
-
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("form-message");
 
 contactForm.addEventListener("submit", async function(event) {
-
     event.preventDefault();
 
     formMessage.textContent = "Sending...";
     formMessage.style.color = "#0b1f3a";
 
-    const data = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        service: document.getElementById("service").value,
-        message: document.getElementById("message").value
-    };
-
     try {
-
-        const response = await fetch("http://localhost:3000/contact", {
+        const response = await fetch(contactForm.action, {
             method: "POST",
+            body: new FormData(contactForm),
             headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+                "Accept": "application/json"
+            }
         });
 
-        const result = await response.json();
-
         if (response.ok) {
-
-            formMessage.textContent = result.message;
-            formMessage.style.color = "green";
-
-            contactForm.reset();
-
-        } else {
-
             formMessage.textContent =
-                "There was a problem sending your message.";
-
+                "Thank you! Your message has been received.";
+            formMessage.style.color = "green";
+            contactForm.reset();
+        } else {
+            formMessage.textContent =
+                "Message could not be sent. Please try again.";
             formMessage.style.color = "red";
         }
-
     } catch (error) {
-
-        console.error("Error:", error);
-
         formMessage.textContent =
-            "Unable to connect to the server.";
-
+            "Connection problem. Please try again later.";
         formMessage.style.color = "red";
     }
-
 });
 </script>
 
